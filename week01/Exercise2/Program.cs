@@ -42,7 +42,7 @@ class Program
             {
                 letter += "-";
             }
-        
+
         }
 
         Console.WriteLine($"Your letter grade is: {letter}");
@@ -55,5 +55,6 @@ class Program
         {
             Console.WriteLine("Unfortunately, you did not pass. Better luck next time!");
         }
-        
-    }    }   
+
+    } 
+}   
