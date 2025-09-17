@@ -14,7 +14,7 @@ class PromptGenerator // Generates random prompts for journal entries
     public string GetRandomPrompt() // Return a single prompt chosen at random
     {
         // Create a Random instance (seeded from system time)
-        // Note: creating a new Random per call can produce repeated values if called rapidly.
+        // Note:  What I found interesting is that creating a new Random per call can produce repeated values if called rapidly.
         Random random = new Random();
         int index = random.Next(_prompts.Count); // Pick a random index within the list
         return _prompts[index]; // Return the selected prompt string
