@@ -1,5 +1,5 @@
 using System;
- 
+
 public class EternalGoal : Goal
 {
     public EternalGoal(string name, string description, int points)
@@ -9,16 +9,16 @@ public class EternalGoal : Goal
 
     public override void RecordEvent()
     {
-        
+        // No state change needed; just add points.
     }
 
     public override bool IsComplete()
     {
-        return false; 
+        return false; // Eternal goals are never "complete"
     }
 
     public override string GetStringRepresentation()
     {
-        return $"EternalGoal:{_shortName},{_description},{_points}";
+        return $"EternalGoal:{ShortName},{Description},{Points}";
     }
 }

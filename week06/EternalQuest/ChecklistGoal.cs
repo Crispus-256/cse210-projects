@@ -3,8 +3,8 @@ using System;
 public class ChecklistGoal : Goal
 {
     private int _amountCompleted;
-    private int _target;
-    private int _bonus;
+    private readonly int _target;
+    private readonly int _bonus;
 
     public ChecklistGoal(string name, string description, int points, int target, int bonus)
         : base(name, description, points)
@@ -13,6 +13,15 @@ public class ChecklistGoal : Goal
         _target = target;
         _bonus = bonus;
     }
+
+    public int AmountCompleted
+    {
+        get { return _amountCompleted; }
+        set { _amountCompleted = value; }
+    }
+
+    public int Target => _target;
+    public int Bonus => _bonus;
 
     public override void RecordEvent()
     {
@@ -26,11 +35,11 @@ public class ChecklistGoal : Goal
 
     public override string GetDetailsString()
     {
-        return $"{_shortName} ({_description}) - Completed {_amountCompleted}/{_target}";
+        return $"{ShortName} ({Description}) - Completed {_amountCompleted}/{_target}";
     }
 
     public override string GetStringRepresentation()
     {
-        return $"ChecklistGoal:{_shortName},{_description},{_points},{_amountCompleted},{_target},{_bonus}";
+        return $"ChecklistGoal:{ShortName},{Description},{Points},{_amountCompleted},{_target},{_bonus}";
     }
 }
